@@ -578,7 +578,7 @@
                           id="nombre" 
                           name="nombre" 
                           value = "{{old('nombre')}}"
-                          placeholder="Consepción Marlén Meza"
+                          placeholder="Consepción"
                           aria-describedby="floatingInputHelp"
                         />
                         <label for="floatingInput">Nombre</label>
@@ -602,9 +602,9 @@
                           type="texto" 
                           id="sucursal" 
                           name="sucursal" 
-                          value="{{ old('sucursal') }}"
+                          value="{{old('sucursal')}}"
                           class="form-control"
-                          placeholder="calle fulano, 6754, jardines del bosque"
+                          placeholder="calle fulano"
                           aria-describedby="floatingInputHelp"
                         />
                         <label for="floatingInput">Sucursal</label>
@@ -615,7 +615,7 @@
                           type="number" 
                           id="sueldo" 
                           name="sueldo" 
-                          value="{{ old('sueldo') }}"
+                          value="{{old('sueldo')}}"
                           class="form-control"
                           placeholder="2200"
                           aria-describedby="floatingInputHelp"
