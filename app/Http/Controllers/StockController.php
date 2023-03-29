@@ -23,7 +23,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        return view('/agregarStore');
+        return view('/agregarStock');
     }
 
     /**
@@ -34,13 +34,13 @@ class StockController extends Controller
         $request->validate([
             'nombre' => 'string|required',
             'cantidad' => 'integer|required',
-            'precio' => 'float|required'
+            'precio' => 'integer|required'
         ]);
 
         $stock = new Stock();
         $stock->nombre = $request->nombre;
         $stock->cantidad = $request->cantidad;
-        $stock->cantidad = $request->cantidad;
+        $stock->precio = $request->precio;
         $stock->save();
 
         return redirect('/stocks');
