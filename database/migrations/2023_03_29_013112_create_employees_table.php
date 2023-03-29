@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->integer('telefono');
+            $table->string('sucursal');
+            $table->float('precio', 6, 2);
             $table->timestamps();
         });
     }

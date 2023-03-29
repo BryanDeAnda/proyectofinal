@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\employee;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class EmployeeController extends Controller
 {
@@ -21,7 +23,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('/agregarEmployee');
     }
 
     /**
@@ -29,7 +31,21 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|required',
+            'telefono' => 'integer|required',
+            'sucursal' => 'string|required',
+            'sueldo' => 'integer|required'
+        ]);
+
+        $employee = new Employee();
+        $employee->nombre = $request->nombre;
+        $employee->telefono = $request->telefono;
+        $employee->sucursal = $request->sucursal;
+        $employee->sueldo = $request->sueldo;
+        $employee->save();
+
+        return redirect('/employees');
     }
 
     /**
