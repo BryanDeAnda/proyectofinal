@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\stock;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class StockController extends Controller
 {
@@ -21,7 +23,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        return view('/agregarStore');
     }
 
     /**
@@ -29,7 +31,19 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|required',
+            'cantidad' => 'integer|required',
+            'precio' => 'float|required'
+        ]);
+
+        $stock = new Stock();
+        $stock->nombre = $request->nombre;
+        $stock->cantidad = $request->cantidad;
+        $stock->cantidad = $request->cantidad;
+        $stock->save();
+
+        return redirect('/stocks');
     }
 
     /**
