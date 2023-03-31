@@ -32,9 +32,9 @@ class StockController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'string|required',
-            'cantidad' => 'integer|required',
-            'precio' => 'integer|required'
+            'nombre' => 'string|max:30|required',
+            'cantidad' => 'numeric|min:0|required',
+            'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
         ]);
 
         $stock = new Stock();
