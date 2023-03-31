@@ -298,9 +298,17 @@
                       @error('precio')
                           <h6>{{$message}}</h6>
                       @enderror
-                      <input type="submit" value="Enviar"/>
+                      <div class="mt-4">
+                        <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                        <button type="reset" class="btn btn-outline-secondary" >Borrar</button>
+                      </div>
                     </form>
-                  </div>
+                    <div class="buy-now card-body">
+                      <a
+                        href="/stocks"
+                        class="btn btn-primary me-2"
+                        >Regresar</a>
+                    </div>
                 </div>
                 <!--<form action="/stocks" method="POST" autocomplete="off">
                     @csrf
@@ -362,14 +370,7 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Regresar</a
-      >
-    </div>
+    
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
