@@ -274,9 +274,12 @@
                                 <a class="dropdown-item" href="{{route('stocks.edit', $stoc)}}"
                                   ><i class="bx bx-edit-alt me-1"></i> Edit</a
                                 >
-                                <a class="dropdown-item" href="javascript:void(0);"
-                                  ><i class="bx bx-trash me-1"></i> Delete</a
-                                >
+                                <form class="dropdown-item" action="{{route('stocks.destroy', $stoc) }}" method = "POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <i class="bx bx-trash me-1"></i>
+                                    <input type="submit" value="Delete">
+                                </form>
                               </div>
                             </div>
                           </td>
