@@ -33,7 +33,7 @@ class StockController extends Controller
     {
         $request->validate([
             'nombre' => 'string|max:30|required',
-            'cantidad' => 'numeric|min:0|required',
+            'cantidad' => 'numeric|regex:/^[\d]{0,3}?$/|required',
             'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
         ]);
 
@@ -59,7 +59,7 @@ class StockController extends Controller
      */
     public function edit(stock $stock)
     {
-        //
+        return view('/editarStock', compact('stock'));
     }
 
     /**
@@ -67,7 +67,18 @@ class StockController extends Controller
      */
     public function update(Request $request, stock $stock)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|max:30|required',
+            'cantidad' => 'numeric|regex:/^[\d]{0,3}?$/|required',
+            'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
+        ]);
+
+        $stock->nombre = $request->nombre;
+        $stock->cantidad = $request->cantidad;
+        $stock->precio = $request->precio;
+        $stock->save();
+
+        return redirect('/stocks');
     }
 
     /**
