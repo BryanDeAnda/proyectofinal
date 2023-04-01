@@ -5,7 +5,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
+  data-assets-path="/assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -15,12 +15,12 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Empleados</title>
+    <title>Editar empleado</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,24 +31,24 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="/assets/js/config.js"></script>
   </head>
 
   <body>
@@ -57,17 +57,9 @@
       <div class="layout-container">
         <!-- Menu -->
 
-      <div class="buy-now">
-      <a href="/employees/create"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Agregar Empleado</a
-      >
-      </div>
-
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="/employees" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -123,7 +115,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">iluminación</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Iluminación</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -134,23 +126,15 @@
           <div class="menu-inner-shadow"></div>
 
           <ul class="menu-inner py-1">
-            
-       
-
             <!-- Forms & Tables -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Tablas</span></li>
-            
-            <!-- Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Editar Empleado</span></li>
+            <!-- Forms -->
             <li class="menu-item active">
-              <a href="tables-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-table"></i>
-                <div data-i18n="Tables">Empleados</div>
+              <a href="javascript:void(0);" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">Editar Empleado</div>
               </a>
             </li>
-            <!-- Misc -->
-            
-            
-            
           </ul>
         </aside>
         <!-- / Menu -->
@@ -183,18 +167,16 @@
                 </div>
               </div>
               <!-- /Search -->
-              
+
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
-                  <a></a>
-                </li>
                 
+
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -203,7 +185,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -236,57 +218,107 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><!--<span class="text-muted fw-light">Sucursal 1 |</span>--> Empleados</h4>
+              <h4 class="fw-bold py-3 mb-4">Editar Empleado</h4>
 
-              <!-- Bootstrap Table with Header - Dark -->
-              <div class="card">
-                <div class="table-responsive text-nowrap">
-                  <table class="table">
-                    <thead class="table-dark">
-                      <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Teléfono</th>
-                        <th>sucursal</th>
-                        <th>sueldo</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                      @foreach ($employees as $emp)
-                        <tr>
-                          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$emp->id}}</strong></td>
-                          <td>{{$emp->nombre}}</td>
-                          <td>{{$emp->telefono}}</td>
-                          <td>{{$emp->sucursal}}</td>
-                          <td>{{$emp->sueldo}}</td>
-                          <td>
-                            <div class="dropdown">
-                              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('employees.edit', $emp)}}"
-                                  ><i class="bx bx-edit-alt me-1"></i> Editar</a
-                                >
-                                <form class="dropdown-item" action="{{route('employees.destroy', $emp) }}" method = "POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <i class="bx bx-trash me-1"></i>
-                                    <input type="submit" value="Delete">
-                                </form>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card mb-4">
+                    <h5 class="card-header">Ingresa la información del producto</h5>
+                    <form  action={{ route('employees.update', $employee) }} method="POST" autocomplete="off" class="card-body">
+                      @csrf
+                      @method('PATCH')
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nombre" 
+                          name="nombre" 
+                          value = "{{$employee->nombre}}"
+                          placeholder="Nombre Apellido"
+                          aria-describedby="floatingInputHelp"
+                        />
+                        <label for="floatingInput">Nombre</label>
+                      </div>
+                      @error('nombre')
+                          <h6>{{$message}}</h6>
+                      @enderror
+                      </br>
+                      <div class="form-floating">
+                        <input
+                          type="number" 
+                          id="telefono" 
+                          name="telefono" 
+                          value = "{{$employee->telefono}}"
+                          class="form-control"
+                          placeholder="1234567890"
+                          aria-describedby="floatingInputHelp"
+                        />
+                        <label for="floatingInput">Teléfono</label>
+                      </div>
+                      @error('telefono')
+                          <h6>{{$message}}</h6>
+                      @enderror
+                      </br>
+                      <div class="form-floating">
+                        <input
+                          type="number" 
+                          id="sucursal" 
+                          name="sucursal" 
+                          value="{{$employee->sucursal}}"
+                          class="form-control"
+                          placeholder="1"
+                          aria-describedby="floatingInputHelp"
+                        />
+                        <label for="floatingInput">Sucursal</label>
+                      </div>
+                      @error('sucursal')
+                          <h6>{{$message}}</h6>
+                      @enderror
+                      </br>
+                      <div class="form-floating">
+                        <input
+                          type="number" 
+                          id="sueldo" 
+                          name="sueldo" 
+                          value="{{$employee->sueldo}}"
+                          class="form-control"
+                          placeholder="0000.00"
+                          aria-describedby="floatingInputHelp"
+                        />
+                        </br>
+                        <label for="floatingInput">Sueldo</label>
+                      </div>
+                      @error('sueldo')
+                          <h6>{{$message}}</h6>
+                      @enderror
+                      <div class="mt-4">
+                        <button type="submit" class="btn btn-primary me-2" href="/employees">Enviar</button>
+                        <button type="reset" class="btn btn-outline-secondary" >Deshacer cambios</button>
+                      </div>
+                    </form>
+                    <div class="buy-now card-body">
+                      <a
+                        href="/employees"
+                        class="btn btn-primary me-2"
+                        >Regresar</a>
+                    </div>
                 </div>
+                <!--<form action="/employees" method="POST" autocomplete="off">
+                    @csrf
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" value = "{{old('nombre')}}"/><br>
+                    @error('nombre')
+                        <h4>{{$message}}</h4>
+                    @enderror
+                    <input type="number" id="cantidad" name="cantidad" value = "{{old('cantidad')}}"/><br>
+                    <input type="number" id="precio" name="precio" value="{{ old('precio') }}" /><br>
+                    <input type="submit" value="Enviar"/>
+                </form>-->
               </div>
-              <!--/ Bootstrap Table with Header Dark -->
+            </div>
+            <!-- / Content -->
 
-            <!-- Footer -->
+            <!-- Footer
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
                 <div class="mb-2 mb-md-0">
@@ -294,12 +326,30 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  , hecho con ❤️ por
-                  <a>Gorilovers</a>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
                 </div>
               </div>
             </footer>
-            <!-- / Footer -->
+             / Footer -->
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -313,22 +363,26 @@
     </div>
     <!-- / Layout wrapper -->
 
+    
+
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/vendor/js/bootstrap.js"></script>
+    <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <!-- Page JS -->
+
+    <script src="/assets/js/form-basic-inputs.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

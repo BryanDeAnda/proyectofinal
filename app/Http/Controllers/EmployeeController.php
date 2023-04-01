@@ -32,10 +32,10 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'string|required',
-            'telefono' => 'integer|required',
-            'sucursal' => 'string|required',
-            'sueldo' => 'integer|required'
+            'nombre' => 'string|max:50|required',
+            'telefono' => 'integer|required|regex:/^[\d]{0,10}?$/',
+            'sucursal' => 'integer|max:4|min:1|required',
+            'sueldo' => 'numeric|required|regex:/^[\d]{0,4}?$/'
         ]);
 
         $employee = new Employee();
@@ -61,7 +61,7 @@ class EmployeeController extends Controller
      */
     public function edit(employee $employee)
     {
-        //
+        return view('/editarEmployee', compact('employee'));
     }
 
     /**
@@ -69,7 +69,20 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, employee $employee)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|max:50|required',
+            'telefono' => 'integer|required|regex:/^[\d]{0,10}?$/',
+            'sucursal' => 'integer|max:4|min:1|required',
+            'sueldo' => 'numeric|required|regex:/^[\d]{0,4}?$/'
+        ]);
+
+        $employee->nombre = $request->nombre;
+        $employee->telefono = $request->telefono;
+        $employee->sucursal = $request->sucursal;
+        $employee->sueldo = $request->sueldo;
+        $employee->save();
+
+        return redirect('/employees');
     }
 
     /**
@@ -77,6 +90,7 @@ class EmployeeController extends Controller
      */
     public function destroy(employee $employee)
     {
-        //
+        $employee->delete();
+        return redirect()->route('employees.index');
     }
 }
