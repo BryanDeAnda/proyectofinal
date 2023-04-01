@@ -59,7 +59,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="/stocks" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -131,9 +131,15 @@
 
             <!-- Tables -->
             <li class="menu-item active">
-              <a href="tables-basic.html" class="menu-link">
+              <a href="/stocks" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">Productos</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="tables-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-table"></i>
+                <div data-i18n="Tables">Empleados</div>
               </a>
             </li>
           </ul>
