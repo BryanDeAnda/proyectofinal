@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('employees', EmployeeController::class);
 Route::resource('stocks', StockController::class);
 Route::middleware([
     'auth:sanctum',
