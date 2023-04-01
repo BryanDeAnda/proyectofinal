@@ -141,8 +141,14 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Tablas</span></li>
             
             <!-- Tables -->
+            <li class="menu-item">
+              <a href="/stocks" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-table"></i>
+                <div data-i18n="Tables">Productos</div>
+              </a>
+            </li>
             <li class="menu-item active">
-              <a href="tables-basic.html" class="menu-link">
+              <a href="/employees" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">Empleados</div>
               </a>
