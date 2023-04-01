@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\stock;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class StockController extends Controller
 {
@@ -21,7 +23,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        return view('/agregarStock');
     }
 
     /**
@@ -29,7 +31,19 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|max:30|required',
+            'cantidad' => 'numeric|regex:/^[\d]{0,3}?$/|required',
+            'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
+        ]);
+
+        $stock = new Stock();
+        $stock->nombre = $request->nombre;
+        $stock->cantidad = $request->cantidad;
+        $stock->precio = $request->precio;
+        $stock->save();
+
+        return redirect('/stocks');
     }
 
     /**
@@ -45,7 +59,7 @@ class StockController extends Controller
      */
     public function edit(stock $stock)
     {
-        //
+        return view('/editarStock', compact('stock'));
     }
 
     /**
@@ -53,7 +67,18 @@ class StockController extends Controller
      */
     public function update(Request $request, stock $stock)
     {
-        //
+        $request->validate([
+            'nombre' => 'string|max:30|required',
+            'cantidad' => 'numeric|regex:/^[\d]{0,3}?$/|required',
+            'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
+        ]);
+
+        $stock->nombre = $request->nombre;
+        $stock->cantidad = $request->cantidad;
+        $stock->precio = $request->precio;
+        $stock->save();
+
+        return redirect('/stocks');
     }
 
     /**
@@ -61,6 +86,7 @@ class StockController extends Controller
      */
     public function destroy(stock $stock)
     {
-        //
+        $stock->delete();
+        return redirect()->route('stocks.index');
     }
 }
