@@ -19,3 +19,12 @@ Route::get('/', function () {
 });
 
 Route::resource('stocks', StockController::class);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('stores');
+    })->name('dashboard');
+});
