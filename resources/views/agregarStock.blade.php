@@ -133,7 +133,7 @@
                 <li class="menu-item active">
                   <a href="javascript:void(0);" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-detail"></i>
-                    <div data-i18n="Form Elements">Formulario</div>
+                    <div data-i18n="Form Elements">Agregar producto</div>
                   </a>
                 </li>
               </ul>

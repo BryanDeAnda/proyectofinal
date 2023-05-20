@@ -158,7 +158,6 @@
                           <h5 class="card-header">Ingresa la información del empleado</h5>
                           <form  action="/employees" method="POST" autocomplete="off" class="card-body">
                             @csrf
-
                             <div class="form-floating">
                               <input
                                 type="text"
