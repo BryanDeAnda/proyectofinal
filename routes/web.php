@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\EmployeeController;
+<<<<<<< HEAD
 //use App\Http\Controllers\LoginController;
+=======
+>>>>>>> connie
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +23,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('stocks', StockController::class);
-
 Route::resource('employees', EmployeeController::class);
 
 //Route::view('/employees', "employees")->middleware('auth')->name('employees');
@@ -33,3 +34,13 @@ Route::resource('employees', EmployeeController::class);
 //Route::post('/validar-registro',[LoginController::class, 'register'])->name('validar-registro');
 //Route::post('/inicia-sesion',[LoginController::class, 'login'])->name('inicia-sesion');
 //Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::resource('stocks', StockController::class);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('stores');
+    })->name('dashboard');
+});
