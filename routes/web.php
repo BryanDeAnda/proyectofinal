@@ -24,8 +24,8 @@ Route::get('/', function () {
 Route::resource('employees', EmployeeController::class);
 Route::resource('stocks', StockController::class);
 Route::resource('stores', StoreController::class);
+Route::resource('storestocks', StoreStockController::class);
 
-Route::resource('storesStocks', StoreStockController::class);
 
 Route::middleware([
     'auth:sanctum',

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\storeStock;
 use App\Models\store;
 use App\Models\stock;
+use Illuminate\Http\Request;
 
 class StoreStockController extends Controller
 {
@@ -13,9 +14,8 @@ class StoreStockController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
-        $stocks = Stock::all();
-        return view('storeStock', compact('stores', 'stocks'));
+        $storeStocks = StoreStock::with('store', 'stock')->get();
+        return view('storestock', compact('storeStocks'));
     }
 
     /**
@@ -23,13 +23,10 @@ class StoreStockController extends Controller
      */
     public function create()
     {
-        $store = Store::find($request->input('id'));
-        $stock = Stock::find($request->input('id'));
-        $cantidad = $request->input('cantidad');
+        $stores = store::all();
+        $stocks = stock::all();
 
-        $store->stocks()->attach($stock, ['cantidad' => $cantidad]);
-
-        return redirect()->route('storeStock')->with('success', 'La relación se creó correctamente.');
+        return view('agregarStoreStock', compact('stores', 'stocks'));
     }
 
     /**
@@ -37,13 +34,25 @@ class StoreStockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validar los datos del formulario de creación
+        $request->validate([
+            'store_id' => 'required',
+            'stock_id' => 'required',
+        ]);
+
+        // Crear un nuevo registro en la tabla pivote "store_stock"
+        $storeStock = new StoreStock();
+        $storeStock->store_id = $request->store_id;
+        $storeStock->stock_id = $request->stock_id;
+        $storeStock->save();
+
+        return redirect('/storestocks')->with('success', 'Relación creada exitosamente');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(storeStock $storeStock)
     {
         //
     }
@@ -51,7 +60,7 @@ class StoreStockController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(storeStock $storeStock)
     {
         //
     }
@@ -59,7 +68,7 @@ class StoreStockController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, storeStock $storeStock)
     {
         //
     }
@@ -67,8 +76,12 @@ class StoreStockController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $storeStock = StoreStock::findOrFail($id);
+
+        $storeStock->delete(); // Elimina el registro de la tabla pivote
+        
+        return redirect()->route('storestocks.index');
     }
 }
