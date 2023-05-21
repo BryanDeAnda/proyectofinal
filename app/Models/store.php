@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class stock extends Model
+class store extends Model
 {
     use HasFactory;
-    public function stores()
+    public function stocks()
     {
-        return $this->belongsToMany(Store::class, 'store_stock')->withPivot('cantidad')->withTimestamps();
+        return $this->belongsToMany(Stock::class, 'store_stock')->withPivot('cantidad')->withTimestamps();
     }
 }

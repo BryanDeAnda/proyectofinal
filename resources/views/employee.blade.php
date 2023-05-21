@@ -153,6 +153,12 @@
                   <div data-i18n="Tables">Empleados</div>
                 </a>
               </li>
+              <li class="menu-item">
+                <a href="/stores" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-table"></i>
+                  <div data-i18n="Tables">Sucursales</div>
+                </a>
+              </li>
               <!-- Misc -->
               
               

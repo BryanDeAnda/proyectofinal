@@ -131,7 +131,7 @@
               <li class="menu-header small text-uppercase"><span class="menu-header-text">Tablas</span></li>
 
               <!-- Tables -->
-              <li class="menu-item active">
+              <li class="menu-item">
                 <a href="/stocks" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-table"></i>
                   <div data-i18n="Tables">Productos</div>
@@ -143,7 +143,8 @@
                   <div data-i18n="Tables">Empleados</div>
                 </a>
               </li>
-              <li class="menu-item">
+              
+              <li class="menu-item active">
                 <a href="/stores" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-table"></i>
                   <div data-i18n="Tables">Sucursales</div>
@@ -172,28 +173,28 @@
                         <tr>
                           <th>ID</th>
                           <th>Nombre</th>
-                          <th>Cantidad</th>
-                          <th>Precio</th>
+                          <th>Dirección</th>
+                          <th>Teléfono</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
-                        @foreach ($stocks as $stoc)
+                        @foreach ($stores as $stor)
                           <tr>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$stoc->id}}</strong></td>
-                            <td>{{$stoc->nombre}}</td>
-                            <td>{{$stoc->cantidad}}</td>
-                            <td><span class="badge bg-label-primary me-1">{{$stoc->precio}}</span></td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$stor->id}}</strong></td>
+                            <td>{{$stor->nombre}}</td>
+                            <td>{{$stor->direccion}}</td>
+                            <td><span class="badge bg-label-primary me-1">{{$stor->telefono}}</span></td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                   <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="{{route('stocks.edit', $stoc)}}"
-                                    ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                                  <a class="dropdown-item" href="{{route('stores.edit', $stor)}}"
+                                    ><i class="bx bx-edit-alt me-1"></i> Editar</a
                                   >
-                                  <form class="dropdown-item" action="{{route('stocks.destroy', $stoc) }}" method = "POST">
+                                  <form class="dropdown-item" action="{{route('stores.destroy', $stor) }}" method = "POST">
                                       @csrf
                                       @method('DELETE')
                                       <i class="bx bx-trash me-1"></i>
@@ -258,9 +259,9 @@
 
       <div class="buy-now">
         <a
-          href="/stocks/create"
+          href="/stores/create"
           class="btn btn-primary btn-buy-now"
-          >Agregar producto</a
+          >Agregar Sucursal</a
         >
       </div>
 
@@ -268,7 +269,7 @@
       <!-- build:js assets/vendor/js/core.js -->
       <script src="../assets/vendor/libs/jquery/jquery.js"></script>
       <script src="../assets/vendor/libs/popper/popper.js"></script>
-      <script src="../assets/vendor/js/bootstrap.js"></script>
+      <script src="../assets/vendor/js/bootstrap.js"></script
       <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
       <script src="../assets/vendor/js/menu.js"></script>
