@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class stock extends Model
 {
     use HasFactory;
+    public function stores()
+    {
+        return $this->belongsToMany(Store::class, 'store_stock')->withPivot('cantidad')->withTimestamps();
+    }
 }

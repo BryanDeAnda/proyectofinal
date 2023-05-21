@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\StoreStockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::get('/', function () {
 Route::resource('employees', EmployeeController::class);
 Route::resource('stocks', StockController::class);
 Route::resource('stores', StoreController::class);
+
+Route::resource('storesStocks', StoreStockController::class);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
