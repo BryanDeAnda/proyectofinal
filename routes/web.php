@@ -27,16 +27,15 @@ Route::resource('stores', StoreController::class);
 Route::resource('storestocks', StoreStockController::class);
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    
-    
-    Route::get('/dashboard', function () {
-        #return view('stores');
-    })->middleware(['auth', 'verified'])->name('login');
-});
+#Route::middleware([
+#    'auth:sanctum',
+#    config('jetstream.auth_session'),
+#    'verified'
+#])->group(function () {
+#    });
+
+Route::get('/dashboard', function () {
+    return view('stores');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 #require __DIR__.'/auth.php';
