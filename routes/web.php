@@ -34,7 +34,7 @@ Route::middleware([
 ])->group(function () {
     
     
-    Route::get('/dashboard', function () {
+    Route::get('/stores', function () {
         return view('stores');
     })->middleware(['auth', 'verified'])->name('dashboard');
 });
