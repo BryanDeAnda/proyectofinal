@@ -34,9 +34,9 @@ Route::middleware([
 ])->group(function () {
     
     
-    Route::get('/stores', function () {
-        return view('stores');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        #return view('stores');
+    })->middleware(['auth', 'verified'])->name('login');
 });
 
 #require __DIR__.'/auth.php';
