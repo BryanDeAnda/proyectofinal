@@ -112,6 +112,11 @@
 
               <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="fw-bold py-3 mb-4"><!--<span class="text-muted fw-light">Sucursal 1 |</span>--> Empleados</h4>
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
                 <!-- Bootstrap Table with Header - Dark -->
                 <div class="card">

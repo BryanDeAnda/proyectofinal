@@ -96,6 +96,7 @@
                               value = "{{old('nombre')}}"
                               placeholder="Ilumina"
                               aria-describedby="floatingInputHelp"
+                              required
                             />
                             <label for="floatingInput">Nombre</label>
                           </div>
@@ -112,6 +113,7 @@
                               class="form-control"
                               placeholder="Av. Tonaltecas 65"
                               aria-describedby="floatingInputHelp"
+                              required
                             />
                             <label for="floatingInput">Dirección</label>
                           </div>
@@ -128,6 +130,7 @@
                               class="form-control"
                               placeholder="3332359671"
                               aria-describedby="floatingInputHelp"
+                              required
                             />
                             <label for="floatingInput">telefono</label>
                           </div>

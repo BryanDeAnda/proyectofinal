@@ -96,6 +96,7 @@
                               value = "{{old('nombre')}}"
                               placeholder="Lampara"
                               aria-describedby="floatingInputHelp"
+                              required
                             />
                             <label for="floatingInput">Nombre</label>
                           </div>
@@ -112,6 +113,7 @@
                               class="form-control"
                               placeholder="10"
                               aria-describedby="floatingInputHelp"
+                              required
                             />
                             <label for="floatingInput">Cantidad</label>
                           </div>
@@ -129,6 +131,7 @@
                               class="form-control"
                               placeholder="100"
                               aria-describedby="floatingInputHelp"
+                              required
                             />
                             <label for="floatingInput">Precio</label>
                           </div>

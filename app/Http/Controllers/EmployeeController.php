@@ -7,6 +7,7 @@ use App\Models\store;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session;
 
 class EmployeeController extends Controller
 {
@@ -32,6 +33,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('success', 'El registro se ha creado correctamente.');
         $request->validate([
             'nombre' => 'string|max:50|required',
             'telefono' => 'integer|required|regex:/^[\d]{0,10}?$/',
@@ -69,6 +71,7 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, employee $employee)
     {
+        Session::flash('success', 'El registro se ha actualizado correctamente.');
         $request->validate([
             'nombre' => 'string|max:50|required',
             'telefono' => 'integer|required|regex:/^[\d]{0,10}?$/',
@@ -89,6 +92,7 @@ class EmployeeController extends Controller
      */
     public function destroy(employee $employee)
     {
+        Session::flash('success', 'El registro se ha eliminado correctamente.');
         $employee->delete();
         return redirect()->route('employees.index');
     }

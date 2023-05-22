@@ -6,6 +6,7 @@ use App\Models\storeStock;
 use App\Models\store;
 use App\Models\stock;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class StoreStockController extends Controller
 {
@@ -35,6 +36,7 @@ class StoreStockController extends Controller
     public function store(Request $request)
     {
         // Validar los datos del formulario de creación
+        Session::flash('success', 'El registro se ha eliminado correctamente.');
         $request->validate([
             'store_id' => 'required',
             'stock_id' => 'required',
@@ -78,6 +80,7 @@ class StoreStockController extends Controller
      */
     public function destroy(Request $request, $id)
     {
+        Session::flash('success', 'El registro se ha eliminado correctamente.');
         $storeStock = StoreStock::findOrFail($id);
 
         $storeStock->delete(); // Elimina el registro de la tabla pivote

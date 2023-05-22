@@ -6,6 +6,7 @@ use App\Models\stock;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session;
 
 class StockController extends Controller
 {
@@ -31,10 +32,11 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('success', 'El registro se ha creado correctamente.');
         $request->validate([
             'nombre' => 'string|max:30|required',
             'cantidad' => 'numeric|regex:/^[\d]{0,3}?$/|required',
-            'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
+            'precio' => 'numeric|required|regex:/^[\d]{0,5}(\.[\d]{1,2})?$/'
         ]);
 
         $stock = new Stock();
@@ -67,10 +69,11 @@ class StockController extends Controller
      */
     public function update(Request $request, stock $stock)
     {
+        Session::flash('success', 'El registro se ha actualizado correctamente.');
         $request->validate([
             'nombre' => 'string|max:30|required',
             'cantidad' => 'numeric|regex:/^[\d]{0,3}?$/|required',
-            'precio' => 'numeric|required|regex:/^[\d]{0,6}(\.[\d]{1,2})?$/'
+            'precio' => 'numeric|required|regex:/^[\d]{0,5}(\.[\d]{1,2})?$/'
         ]);
 
         $stock->nombre = $request->nombre;
@@ -86,6 +89,7 @@ class StockController extends Controller
      */
     public function destroy(stock $stock)
     {
+        Session::flash('success', 'El registro se ha eliminado correctamente.');
         $stock->delete();
         return redirect()->route('stocks.index');
     }

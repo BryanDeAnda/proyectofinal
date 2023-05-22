@@ -6,6 +6,7 @@ use App\Models\store;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Session;
 
 class StoreController extends Controller
 {
@@ -31,6 +32,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('success', 'El registro se ha creado correctamente.');
         $request->validate([
             'nombre' => 'string|max:30|required',
             'direccion' => 'string|max:50|required',
@@ -67,6 +69,7 @@ class StoreController extends Controller
      */
     public function update(Request $request, store $store)
     {
+        Session::flash('success', 'El registro se ha actualizado correctamente.');
         $request->validate([
             'nombre' => 'string|max:30|required',
             'direccion' => 'string|max:50|required',
@@ -86,6 +89,7 @@ class StoreController extends Controller
      */
     public function destroy(store $store)
     {
+        Session::flash('success', 'El registro se ha eliminado correctamente.');
         $store->delete();
         return redirect()->route('stores.index');
     }

@@ -97,6 +97,7 @@
                             value="{{$store->nombre}}"
                             placeholder="Ilumina"
                             aria-describedby="floatingInputHelp"
+                            required
                           />
                           <label for="floatingInput">Nombre</label>
                         </div>
@@ -113,6 +114,7 @@
                             class="form-control"
                             placeholder="Av. Tonaltecas 54"
                             aria-describedby="floatingInputHelp"
+                            required
                           />
                           <label for="floatingInput">Direccion</label>
                         </div>
@@ -129,6 +131,7 @@
                             class="form-control"
                             placeholder="100"
                             aria-describedby="floatingInputHelp"
+                            required
                           />
                           <label for="floatingInput">Telefono</label>
                         </div>

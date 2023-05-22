@@ -93,6 +93,7 @@
                                 value = "{{old('nombre')}}"
                                 placeholder="Nombre Apellido"
                                 aria-describedby="floatingInputHelp"
+                                required
                               />
                               <label for="floatingInput">Nombre</label>
                             </div>
@@ -109,6 +110,7 @@
                                 class="form-control"
                                 placeholder="1234567890"
                                 aria-describedby="floatingInputHelp"
+                                required
                               />
                               <label for="floatingInput">Teléfono</label>
                             </div>
@@ -125,6 +127,7 @@
                                 class="form-control"
                                 placeholder="0000.00"
                                 aria-describedby="floatingInputHelp"
+                                required
                               />
                               </br>
                               <label for="floatingInput">Sueldo</label>

@@ -96,6 +96,11 @@
 
               <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="fw-bold py-3 mb-4">Sucursales</h4>
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
                 <!-- Bootstrap Table with Header - Dark -->
                 <div class="card">
@@ -216,6 +221,7 @@
 
       <!-- Place this tag in your head or just before your close body tag. -->
       <script async defer src="https://buttons.github.io/buttons.js"></script>
+
     </body>
 
 </x-app-layout>
