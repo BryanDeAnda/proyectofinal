@@ -119,22 +119,6 @@
                             <div class="form-floating">
                               <input
                                 type="number" 
-                                id="sucursal" 
-                                name="sucursal" 
-                                value="{{old('sucursal')}}"
-                                class="form-control"
-                                placeholder="1"
-                                aria-describedby="floatingInputHelp"
-                              />
-                              <label for="floatingInput">Sucursal</label>
-                            </div>
-                            @error('sucursal')
-                                <h6>{{$message}}</h6>
-                            @enderror
-                            </br>
-                            <div class="form-floating">
-                              <input
-                                type="number" 
                                 id="sueldo" 
                                 name="sueldo" 
                                 value="{{old('sueldo')}}"

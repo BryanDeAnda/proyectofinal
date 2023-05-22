@@ -12,4 +12,9 @@ class store extends Model
     {
         return $this->hasMany(StoreStock::class);
     }
+    
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

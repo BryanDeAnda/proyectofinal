@@ -122,8 +122,8 @@
                           <th>ID</th>
                           <th>Nombre</th>
                           <th>Teléfono</th>
-                          <th>sucursal</th>
                           <th>sueldo</th>
+                          <th>ID Sucursal</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
@@ -133,8 +133,8 @@
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$emp->id}}</strong></td>
                             <td>{{$emp->nombre}}</td>
                             <td>{{$emp->telefono}}</td>
-                            <td>{{$emp->sucursal}}</td>
                             <td>{{$emp->sueldo}}</td>
+                            <td>{{$emp->store_id}}</td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

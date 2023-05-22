@@ -123,22 +123,6 @@
                         <div class="form-floating">
                           <input
                             type="number" 
-                            id="sucursal" 
-                            name="sucursal" 
-                            value="{{$employee->sucursal}}"
-                            class="form-control"
-                            placeholder="1"
-                            aria-describedby="floatingInputHelp"
-                          />
-                          <label for="floatingInput">Sucursal</label>
-                        </div>
-                        @error('sucursal')
-                            <h6>{{$message}}</h6>
-                        @enderror
-                        </br>
-                        <div class="form-floating">
-                          <input
-                            type="number" 
                             id="sueldo" 
                             name="sueldo" 
                             value="{{$employee->sueldo}}"
@@ -152,6 +136,14 @@
                         @error('sueldo')
                             <h6>{{$message}}</h6>
                         @enderror
+                        <div class="form-floating">
+                            <select class="form-control" aria-describedby="floatingInputHelp" name="store" id="store">
+                                @foreach ($stores as $store)
+                                    <option value="{{ $store->id }}" {{ $employee->store_id == $store->id ? 'selected' : '' }}>{{ $store->nombre }}</option>
+                                @endforeach
+                            </select>
+                            <label for="floatingInput">Sucursal</label>
+                        </div>
                         <div class="mt-4">
                           <button type="submit" class="btn btn-primary me-2" href="/employees">Enviar</button>
                           <button type="reset" class="btn btn-outline-secondary" >Deshacer cambios</button>
